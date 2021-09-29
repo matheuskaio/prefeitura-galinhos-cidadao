@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='./assets/css/stylesCompleto.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <header class="header-padrao">
+        <a href="index.html">
+            <img src="./assets/images/logo-branco.png" alt="Logo">
+        </a>
+    </header>
+    <div class='container'>
+        <div class='header-container'>
+            <h2 class='sub-title-header-container'>Realize a consulta do seu chamado preenchendo o campo a baixo.</h2>
+            <h2 class='sub-title-header-container'>É possível você consultar através do PROTOCOLO, CPF, E-MAIL e TELEFONE.</h2>
+        </div>
+        <form action="consultaProtocoloLista.html" method='post'>
+            <div class='grupo-form'>
+                <label for="tipo-consulta">Tipo de Consulta</label>
+                <select name="tipo-consulta" id="tipo-consulta">Tipo de Consulta
+                <option value="CPF">CPF</option>
+                <option value="PROTOCOLO">PROTOCOLO</option>
+            </select>
+            </div>
+            <div class='grupo-form'>
+                <label for="protocolo">Protocolo</label>
+                <input type="text" name="protocolo" id="protocolo">
+            </div>
+            <button class="btn btn-success">Consultar</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

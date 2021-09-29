@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+    <link rel="stylesheet" href="../assets/css/styleAdmin.css" />
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+            <a href="index.html" class="logo-admin">
+                <img src="../assets/images/logo-branco.png" alt="">
+            </a>
+
+            <!-- <a href="#" class="config">
+        <i class="fas fa-cog"></i>
+      </a> -->
+            <span class="config">
+        <i class="fas fa-cog"></i>
+        </a>
+        <ul class="config_menu_dropdow">
+          <li><a href="#">Cadastrar Tipo</a></li>
+          <li><a href="#">Listar Tipos</a></li>
+          <li><a href="#">Cadastrar Formato</a></li>
+          <li><a href="#">Listar Formatos</a></li>
+          <li><a href="#">Cadastrar Aplicação</a></li>
+          <li><a href="#">Listar Aplicações</a></li>
+          <li><a href="#">Upload em massa</a></li>
+          <!-- <li><a href="admin/configuracoes">Configurações</a></li> -->
+        </ul>
+      </span>
+        </div>
+        <nav class="nav-admin">
+            <button class="btn-mobile">
+        <span class="hamburger"></span>
+      </button>
+            <ul class="menu-dashboard">
+                <li>
+                    <a href="#" class="ativo">
+                        <i class="fas fa-home"></i> home
+                    </a>
+                </li>
+                <li data-dropdow>
+                    <a class="#"> <i class="fas fa-box"></i> produtos </a>
+                    <ul class="dropdowMenu">
+                        <li><a href="#">cadastrar</a></li>
+                        <li><a href="#">listar</a></li>
+                    </ul>
+                </li>
+                <li data-dropdow>
+                    <a class="#"> <i class="fas fa-clipboard-list"></i> catálogos </a>
+                    <ul class="dropdowMenu">
+                        <li><a href="#">cadastrar</a></li>
+                        <li><a href="#">listar</a></li>
+                    </ul>
+                </li>
+                <li data-dropdow>
+                    <a class="#"><i class="fas fa-store"></i> fornecedores </a>
+                    <ul class="dropdowMenu">
+                        <li><a href="#">cadastrar</a></li>
+                        <li><a href="#">listar</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="" href="#"> <i class="fas fa-users"></i> leads </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="app">
+        <h1 class="titulo_admin">Dashboard</h1>
+        <div class="dados_dash">
+            <a href="admin/leads">
+                <div class="card_dash">
+                    <i class="fas fa-users"></i>
+                    <h2>Solicitações abertas</h2>
+                    <h3>100</h3>
+                </div>
+            </a>
+            <a href="admin/leads">
+                <div class="card_dash">
+                    <i class="fas fa-users"></i>
+                    <h2>Solicitações Completas</h2>
+                    <h3>100</h3>
+                </div>
+            </a>
+            <a href="admin/leads">
+                <div class="card_dash">
+                    <i class="fas fa-users"></i>
+                    <h2>Usuários</h2>
+                    <h3>100</h3>
+                </div>
+            </a>
+        </div>
+    </main>
+
+
+    <!-- footer -->
+    <footer>
+        <div class="copy">
+            <p>© Copyright MM Design & Desenvolvimento</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="../assets/js/scriptAdmin.js"></script>
+    <!-- <script src="../assets/js/moment-with-locales.js"></script> -->
+
+
+    <!-- FORMATAR DATA -->
+    <!-- <script>
+        moment.locale("pt-BR");
+
+        const listaDataNaoFormatada = document.querySelectorAll('.data-formatar');
+
+        listaDataNaoFormatada.forEach((item, index) => {
+            item.innerText = moment(item.innerText).format('lll')
+        });
+    </script> -->
+
+    <!-- AÇÕES MODAL -->
+    <!-- <script>
+        const BASE = '<?= $base; ?>';
+        // moment.locale("pt-BR");
+
+        const botaoAbrirModal = document.querySelectorAll('.item-leads');
+        botaoAbrirModal.forEach((item) => {
+            item.addEventListener('click', async(e) => {
+                // PEGANDO TODA A LINHA
+                const linha = item.parentNode.parentNode
+                    // PEGANDO ID
+                const codigo = linha.children[0].innerHTML;
+                let requisicao = await fetch(`${BASE}/ajax/leads/${codigo}`, {
+                    method: 'GET',
+                });
+
+                let requisicaoJson = await requisicao.json();
+
+                if (requisicaoJson.error === '') {
+                    document.getElementById('nome').innerHTML = requisicaoJson.lead.nome;
+                    document.getElementById('email').innerHTML = requisicaoJson.lead.email;
+                    document.getElementById('telefone').innerHTML = requisicaoJson.lead.telefone;
+                    document.getElementById('telefone-whatsapp').setAttribute("href", "https://api.whatsapp.com/send?phone=" + requisicaoJson.lead.telefone + "&text=Ol%C3%A1%2C%20aqui%20%C3%A9%20o%20Rafael%20Manezi");
+                    document.getElementById('cidade').innerHTML = requisicaoJson.lead.cidade;
+                    document.getElementById('pais').innerHTML = requisicaoJson.lead.pais;
+                    document.getElementById('observacoes').innerHTML = requisicaoJson.lead.observacoes;
+                    document.getElementById('obs').value = requisicaoJson.lead.observacoes;
+                    document.getElementById('codigo').value = requisicaoJson.lead.id;
+                    document.getElementById('data-update').innerHTML = moment(requisicaoJson.lead.date_update_observacao).format('lll');
+                    document.getElementById('data-hora-lead').innerHTML = moment(requisicaoJson.lead.date_time).format('lll');
+
+
+                    const checklist = requisicaoJson.lead.checklist;
+                    const arrayCheckLead = checklist.split(',')
+                    const listaOpacaoCheckbox = document.getElementsByName('opcao');
+
+                    for (var i = 0; i < listaOpacaoCheckbox.length; i++) {
+                        listaOpacaoCheckbox[i].checked = arrayCheckLead.includes(listaOpacaoCheckbox[i].value)
+                    }
+                }
+            });
+        });
+
+        const botaoSalvar = document.getElementById('salvar');
+
+        botaoSalvar.addEventListener('click', async(event) => {
+            // event.preventDefault();
+            const nome = document.getElementById('nome');
+            const email = document.getElementById('email');
+            const telefone = document.getElementById('telefone');
+            const observacoes = document.getElementById('obs');
+            const listaOpacaoCheckbox = document.getElementsByName('opcao');
+            const codigo = document.getElementById('codigo');
+
+            const containerModal = document.querySelector(".modal_container");
+
+
+            let arrayCheckList = []
+            for (var i = 0; i < listaOpacaoCheckbox.length; i++) {
+                if (listaOpacaoCheckbox[i].checked) {
+                    arrayCheckList.push(listaOpacaoCheckbox[i].value)
+                }
+            }
+            const checkListString = arrayCheckList.length > 0 ? arrayCheckList.join(',') : '';
+
+            let data = new FormData();
+            data.append('observacoes', observacoes.value);
+            data.append('checklist', checkListString);
+
+
+            let requisicao = await fetch(`${BASE}/ajax/leads-update/${codigo.value}`, {
+                method: 'POST',
+                body: data
+            });
+
+            let requisicaoJson = await requisicao.json();
+
+            if (requisicaoJson.error === '') {
+                codigo.value = '';
+                nome.value = '';
+                email.value = '';
+                telefone.value = '';
+
+
+                containerModal.classList.toggle("ativo");
+
+
+                swal({
+                    title: "Modificação realizada com sucesso!",
+                    text: "A alteração foi realizada com sucesso",
+                    icon: "success",
+                    timer: 2000,
+                    buttons: false
+                });
+
+            }
+
+        })
+    </script> -->
+
+    <!-- <script>
+        const buttonsDelete = document.querySelectorAll('.delete-button');
+
+        buttonsDelete.forEach((button) => {
+            button.addEventListener('click', async(e) => {
+                swal({
+                        title: "Deseja excluir esse lead?",
+                        // text: "Você deseja exc!",
+                        icon: "warning",
+                        buttons: ['Não', 'Sim'],
+                        successMode: true,
+                    })
+                    .then(async(willDelete) => {
+                        if (willDelete) {
+                            const linha = button.parentNode.parentNode
+                            const codigo = linha.children[0].innerHTML;
+                            let requisicao = await fetch(`${BASE}/ajax/leads-delete/${codigo}`, {
+                                method: 'DELETE',
+                            });
+                            let requisicaoJson = await requisicao.json();
+                            if (requisicaoJson.error === '') {
+                                swal("Lead apagado com sucesso!", {
+                                    icon: "success",
+                                    timer: 2000,
+                                    buttons: false
+                                });
+                                setTimeout(() => {
+                                    location.reload();
+                                }, 2005)
+
+                            } else {
+                                swal("Erro ao apagar leads!", {
+                                    icon: "danger",
+                                });
+                            }
+                        } else {
+                            e.preventDefault();
+                        }
+                    });
+            });
+        });
+    </script> -->
+
+    <!-- <script>
+        //animar numeros
+
+        const numeros = document.querySelectorAll("[data-numero]");
+
+        numeros.forEach((numero) => {
+
+            const total = +numero.innerText;
+            const incremento = Math.floor(total / 10);
+
+            let start = 0;
+
+            const timer = setInterval(() => {
+                start = start + incremento;
+
+                numero.innerText = start;
+
+                if (start > total) {
+                    numero.innerText = total;
+                    clearInterval(timer);
+                }
+            }, 105);
+        });
+    </script> -->
+</body>
+
+</html>

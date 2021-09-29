@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #212121;
+}
+
+body {
+    background-color: #EEEEEE;
+}
+
+.header-padrao {
+    display: flex;
+    justify-content: center;
+    height: 90px;
+    width: 100%;
+    background-color: #206A5D;
+}
+
+.header-padrao img {
+    height: 70px;
+}
+
+.container {
+    /* width: 1080px; */
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-container {
+    width: 100vw;
+    margin-bottom: 50px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-container-full {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-container-full img {
+    padding: 100px 0;
+}
+
+.title-header-container {
+    max-width: 980px;
+    font-family: "Oxygen";
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 45px;
+    margin: 15px 0;
+}
+
+.sub-title-header-container {
+    max-width: 880px;
+    font-family: "Oxygen";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    margin: 15px 0;
+}
+
+.grupo-form,
+.grupo-form-cadastra {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-form label,
+.grupo-form-cadastra label {
+    font-family: "Oxygen";
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.grupo-form input,
+.grupo-form select {
+    width: 300px;
+    height: 32px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.grupo-botao {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0 25px;
+}
+
+.btn,
+.btn-pequeno {
+    height: 40px;
+    border: #fff solid 2px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.btn-pequeno {
+    padding: 10px;
+    max-width: 150px;
+    width: 100%;
+}
+
+.btn:hover,
+.btn-pequeno:hover {
+    transition: 0.5s;
+    opacity: 0.7;
+}
+
+.btn-success {
+    background: #206A5D;
+    color: #FFF;
+    font-family: "Oxygen";
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.btn-cancelar {
+    background: #CD113B;
+    color: #FFF;
+    font-family: "Oxygen";
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* PAGINA CONSULTA PROCESSO LISTA */
+
+.container-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1080px;
+    background-color: #FFF;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.container-box-header {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-sub-title {
+    font-size: 35px;
+    font-family: "Oxygen";
+    font-weight: 500;
+}
+
+.box-title {
+    font-size: 35px;
+    font-family: "Oxygen";
+    font-weight: 700;
+}
+
+.box-solicitacoes-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    padding: 20px;
+}
+
+.solicitacao {
+    background: rgba(238, 238, 238, 0.5);
+    width: 450px;
+    height: 200px;
+    border-left: 5px solid rgba(255, 201, 71, 0.9);
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.solicitacao:hover {
+    transition: 0.5s;
+    opacity: 0.7;
+}
+
+.solicitacao-container {
+    padding: 20px 30px;
+}
+
+.solicitacao-status {
+    padding: 5px 10px;
+    background: #FFC947;
+    border-radius: 10px;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.solicitacao-dados {
+    margin-top: 20px;
+}
+
+.solicitacao-container p {
+    margin-top: 10px;
+    font-family: "Oxygen";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.container-box form {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 20px;
+}
+
+.coluna-1 {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    padding: 10px 20px;
+}
+
+.coluna-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.coluna-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.grupo-form,
+.grupo-form-cadastra-1,
+.grupo-form-cadastra-2,
+.grupo-form-cadastra-3-1,
+.grupo-form-cadastra-3-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0px 10px;
+}
+
+.grupo-form-cadastra-1 input,
+.grupo-form-cadastra-1 select {
+    width: 100vw;
+    max-width: 1000px;
+    height: 32px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.grupo-form-cadastra-1 textarea {
+    width: 100vw;
+    max-width: 1000px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.grupo-form-cadastra-2 input,
+.grupo-form-cadastra-2 select {
+    width: 100vw;
+    max-width: 490px;
+    /* width: 465px;
+    max-width: 465px; */
+    height: 32px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.grupo-form-cadastra-3-1 input,
+.grupo-form-cadastra-3-1 select {
+    width: 100vw;
+    /* width: 300px; */
+    max-width: 350px;
+    height: 32px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.grupo-form-cadastra-3-2 input,
+.grupo-form-cadastra-3-2 select {
+    width: 100vw;
+    /* width: 630px; */
+    max-width: 630px;
+    height: 32px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}

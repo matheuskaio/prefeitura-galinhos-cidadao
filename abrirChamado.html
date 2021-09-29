@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='./assets/css/stylesCompleto.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <header class="header-padrao">
+        <a href="index.html">
+            <img src="./assets/images/logo-branco.png" alt="Logo">
+        </a>
+    </header>
+
+    <div class='container'>
+        <div class='header-container'>
+            <h2 class='sub-title-header-container'>O Fala Cidadão é mais nova forma da Prefeitura Municipal de Galinhos através da SECRETÁRIA XXX que tem como objetivo possibilitar ao público externo compartilhar suas necessidades referentes ao campo cuja Prefeitura Municipal se faz responsável.</h2>
+            <h2 class='sub-title-header-container'>Em casos de dúvidas de como abrir o chamado, consulte o manual clicando aqui.</h2>
+            <h2 class='sub-title-header-container'>Já abriu um chamado antes e deseja acompanhá-lo? Clique aqui.</h2>
+        </div>
+        <div class='container-box'>
+            <form action="" method='post'>
+                <div class='coluna-2'>
+                    <div class='grupo-form-cadastra-2'>
+                        <label for="tipo-consulta">Categória</label>
+                        <select name="tipo-consulta" id="tipo-consulta">
+                          <option value="CPF">CPF</option>
+                          <option value="PROTOCOLO">PROTOCOLO</option>
+                      </select>
+                    </div>
+                    <div class='grupo-form-cadastra-2'>
+                        <label for="tipo-consulta">Secretária</label>
+                        <select name="tipo-consulta" id="tipo-consulta">
+                        <option value="CPF">CPF</option>
+                        <option value="PROTOCOLO">PROTOCOLO</option>
+                    </select>
+                    </div>
+                </div>
+                <div class='coluna-3'>
+                    <div class='grupo-form-cadastra-3-1'>
+                        <label for="cpf">CPF (Opcional)</label>
+                        <input type="text" name="cpf" id="cpf" placeholder="Informe seu CPF">
+                    </div>
+                    <div class='grupo-form-cadastra-3-2'>
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" placeholder="Informe seu nome">
+                    </div>
+                </div>
+                <div class='coluna-3'>
+                    <div class='grupo-form-cadastra-3-1'>
+                        <label for="email">E-mail (Opcional)</label>
+                        <input type="email" name="email" id="email" placeholder="Informe seu e-mail">
+                    </div>
+                    <div class='grupo-form-cadastra-3-1'>
+                        <label for="telefone">Telefone</label>
+                        <input type="text" name="telefone" id="telefone" placeholder="Informe seu telefone">
+                    </div>
+                </div>
+                <div class="coluna-1">
+                    <div class='grupo-form-cadastra-1'>
+                        <label for="descricao">Descrição</label>
+                        <textarea name="descricao" id="descricao" placeholder="Informe aqui a descrição da informação" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="coluna-1">
+                    <div class='grupo-form-cadastra-1'>
+                        <label for="anexos">Anexos (É possível anexar até 10 arquivos)</label>
+                        <input type="file" name="anexos[]" id="anexos" multiple="2">
+                    </div>
+                </div>
+                <div class="grupo-botao">
+                    <button class="btn-pequeno btn-success">Cadastrar</button>
+                    <button class="btn-pequeno btn-cancelar">Limpar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,651 @@
+@import url(style1.css);
+html {
+    overflow-x: hidden;
+}
+
+header {
+    position: static !important;
+}
+
+.header {
+    background: #000;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-admin img {
+    height: 35px;
+}
+
+.config i {
+    font-size: 35px;
+    color: #fff;
+    padding: 10px;
+}
+
+.nav-admin {
+    padding: 10px 50px;
+    background: #206A5D;
+}
+
+.menu-dashboard {
+    display: flex;
+}
+
+.menu-dashboard li {
+    margin-right: 40px;
+    font-size: 18px;
+}
+
+.menu-dashboard li a {
+    padding: 11px;
+    color: #fff;
+    text-transform: capitalize;
+    transition: background 0.5s;
+}
+
+.menu-dashboard li a.ativo {
+    background: #000;
+}
+
+.menu-dashboard li a:hover {
+    background: #000;
+}
+
+#app {
+    padding: 80px 50px 30px 50px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 100;
+    animation: sld 0.6s forwards;
+}
+
+@keyframes sld {
+    from {
+        opacity: 0;
+        transform: translate3d(-40px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+#app::after {
+    content: "";
+    width: 400px;
+    height: 400px;
+    display: block;
+    background-color: #206A5D;
+    border-radius: 10px;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    right: -80px;
+    top: 40%;
+    z-index: -1;
+    animation: rodando 1s forwards;
+}
+
+@keyframes rodando {
+    0% {
+        transform: rotate(-60deg);
+    }
+}
+
+#app.listar::after {
+    display: none;
+}
+
+.titulo_admin {
+    font-size: 25px;
+    color: #666565;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.titulo_admin::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    margin-top: 4px;
+    background-color: #206A5D;
+}
+
+.card {
+    width: 100%;
+    /* max-width: 600px; */
+    max-width: 800px;
+    background: #fbf5f5;
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0.5rem 0.5rem 0.1rem #666565;
+}
+
+#app .container {
+    position: relative;
+}
+
+form.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 25px;
+}
+
+form.form input,
+form.form textarea,
+form.form select,
+.file label {
+    height: 38px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #666565;
+    color: #666565;
+    resize: none;
+    font-size: 16px;
+}
+
+.desc_form {
+    height: 150px !important;
+}
+
+.acoes {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.acoes .btn {
+    color: #ffff;
+    margin-top: 0;
+    width: 25%;
+    transition: filter 0.6s;
+}
+
+.acoes .btn.salvar {
+    background: #0b5504 !important;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.acoes .btn.cancelar {
+    background: #960505 !important;
+    font-size: 14px;
+}
+
+.acoes .btn:hover {
+    filter: brightness(80%);
+}
+
+.file input[type="file"] {
+    display: none;
+}
+
+.file label {
+    background-color: #fff;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.group-add-imagens-edit {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.group-add-imagens-edit label {
+    border: 0px;
+    width: auto;
+}
+
+.cabecalho-upload {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+}
+
+.botao-download-planilha {
+    background-color: #0b5504;
+    padding: 5px 20px;
+    border-radius: 3px;
+    color: #FFF;
+    height: 35px;
+}
+
+.botao-download-planilha:hover {
+    border: 1px solid #0b5504;
+    background-color: #FFF;
+    color: #0b5504;
+    transition: 0.7s;
+}
+
+.imagens-produto {
+    display: grid;
+    /* flex-direction: row; */
+    grid-gap: 5px;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: 10px;
+    /* max-width: 600px; */
+}
+
+.imagens-produto a {
+    display: flex;
+    flex-direction: column;
+}
+
+.imagens-produto img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.imagens-produto-preview div {
+    display: flex;
+    flex-direction: column;
+}
+
+.imagens-produto-preview div a {
+    display: flex;
+    flex-direction: column;
+}
+
+.imagens-produto-preview div img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.imagens-produto-preview div input[type="file"] {
+    display: none;
+}
+
+.imagens-produto-preview div label {
+    /* .trocar-imagem { */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 20px;
+    border: 1px solid blue;
+    border-radius: 2px;
+    color: blue;
+    background: #FFF;
+    font-size: 14px;
+}
+
+.imagens-produto-preview div label:hover {
+    border-radius: 2px;
+    color: #FFF;
+    background: blue;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.produto-remove-item {
+    width: 100px;
+    height: 20px;
+    border: 1px solid red;
+    border-radius: 2px;
+    color: red;
+    background: #FFF;
+    /* height: 100px; */
+    /* margin-bottom: 5px; */
+    /* border-radius: 3px; */
+}
+
+.produto-remove-item:hover {
+    /* border: 1px solid red; */
+    border-radius: 2px;
+    color: #FFF;
+    background: red;
+    transition: 0.7s;
+    /* height: 100px; */
+    /* margin-bottom: 5px; */
+    /* border-radius: 3px; */
+}
+
+.produto-adicionar-item {
+    width: 100px;
+    height: 20px;
+    border: 1px solid green;
+    border-radius: 2px;
+    color: green;
+    background: #FFF;
+}
+
+.produto-adicionar-item:hover {
+    border-radius: 2px;
+    color: #FFF;
+    background: green;
+    transition: 0.7s;
+}
+
+footer .copy {
+    background: #000;
+    color: #fff;
+}
+
+.card-tabela {
+    width: 100%;
+}
+
+.card-tabela table {
+    width: 100%;
+    color: #666565;
+}
+
+.card-tabela table thead tr th {
+    text-align: left;
+    font-weight: 700;
+    background: #206A5D;
+    color: #fff;
+    padding-left: 20px !important;
+}
+
+.card-tabela table tr {
+    height: 40px;
+}
+
+.card-tabela table td {
+    padding-left: 20px !important;
+}
+
+.card-tabela table tr:nth-child(even) {
+    background-color: #fbf5f5;
+}
+
+.paginas a {
+    font-size: 30px;
+    color: #206A5D;
+}
+
+.filtro {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.filtro input {
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #666565;
+    padding: 3px 0 3px 10px;
+}
+
+.filtro i {
+    right: 15px;
+    position: absolute;
+    color: #666565;
+    top: 7px;
+}
+
+.btn-mobile {
+    display: none;
+}
+
+
+/* dropdown */
+
+[data-dropdow] {
+    position: relative;
+}
+
+[data-dropdow] .dropdowMenu {
+    display: none;
+}
+
+
+/* [data-dropdow]:hover .dropdowMenu, */
+
+[data-dropdow].active .dropdowMenu {
+    display: block;
+    animation: showUp 0.5s forwards;
+}
+
+@keyframes showUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.dropdowMenu {
+    position: absolute;
+    background: #3dd3b8;
+    z-index: 200;
+    top: 30px;
+}
+
+.dropdowMenu li {
+    display: inline;
+    margin: 0;
+}
+
+.dropdowMenu li a {
+    display: block;
+    padding: 10px 20px;
+    transition: background 0.5s;
+    width: 100%;
+}
+
+.dropdowMenu li a:hover {
+    background: #206A5D;
+}
+
+.dropdowMenu::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0px;
+    height: 0px;
+    border-bottom: 10px solid #3dd3b8;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+[data-dropdow] a {
+    cursor: pointer !important;
+}
+
+
+/* ***** */
+
+.config {
+    position: relative;
+    cursor: pointer;
+    padding: 0 30px;
+}
+
+.config_menu_dropdow {
+    display: none;
+}
+
+.config:hover .config_menu_dropdow {
+    position: absolute;
+    animation: showUp 0.5s forwards;
+    display: block;
+    right: 0;
+    top: 50px;
+    border-bottom: 4px solid #206A5D;
+    width: 200px;
+    background: #000;
+    padding: 10px 0px;
+    z-index: 99999;
+}
+
+.config_menu_dropdow li a {
+    padding: 10px 20px;
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.config_menu_dropdow li a:hover {
+    background: #206A5D;
+}
+
+.dados_dash {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card_dash {
+    text-align: center;
+    margin-right: 80px;
+    margin-top: 20px;
+    padding: 50px 20px;
+    background: #d669741a;
+    border-radius: 20px;
+    width: 250px;
+    color: #FFC947;
+    transition: box-shadow 0.5s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5), -2px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card_dash:hover {
+    box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.card_dash i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.card_dash h2 {
+    font-size: 14px;
+}
+
+.card_dash h3 {
+    font-weight: bold;
+}
+
+
+/* responsivo */
+
+@media (max-width: 1150px) {
+    .card-tabela table {
+        width: 1000px;
+        overflow-x: auto;
+        position: relative;
+    }
+}
+
+@media (max-width: 900px) {
+    /* menu mobile */
+    .btn-mobile {
+        display: block;
+        cursor: pointer;
+        border: none;
+        background: none;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1000;
+        padding: 5px 10px;
+    }
+    .hamburger {
+        border-top: 2px solid #fff;
+        display: block;
+    }
+    .menu-dashboard {
+        display: none;
+    }
+    .nav-admin {
+        position: relative;
+        z-index: 10000;
+    }
+    .menu-dashboard.ativo {
+        display: block;
+        padding: 60px 0 20px 0;
+        animation: fade 0.5s forwards;
+        z-index: 10000;
+        position: relative;
+    }
+    @keyframes fade {
+        from {
+            opacity: 0;
+            transform: translate3d(60px, 60px, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    .menu-dashboard.ativo li a {
+        padding: 10px 5px;
+        display: block;
+    }
+    .hamburger::after,
+    .hamburger::before {
+        content: "";
+        width: 30px;
+        height: 2px;
+        background: #fff;
+        margin-top: 9px;
+        display: block;
+    }
+    .dropdowMenu {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    #app::after {
+        display: none;
+    }
+    form.form {
+        grid-template-columns: 1fr;
+    }
+    .dados_dash {
+        align-items: center;
+        flex-direction: column;
+    }
+    .card_dash {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .header,
+    .nav-admin {
+        padding: 10px 20px;
+    }
+    .acoes .btn {
+        width: 100%;
+    }
+    .titulo_admin {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    #app {
+        padding: 80px 10px 40px 10px;
+    }
+    .filtro {
+        position: relative;
+    }
+    .filtro input {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
